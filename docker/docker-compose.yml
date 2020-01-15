@@ -1,0 +1,15 @@
+version: "2"
+services:
+  mysql:
+    build: ./mysql
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    container_name: tradeBotApiDb
+    volumes:
+      - ./mysql/scripts/:/tmp/mysqlscripts
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1111
+      MYSQL_DATABASE: tradeBotApiDb
